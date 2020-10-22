@@ -1,4 +1,4 @@
-FROM node:alpine AS dependencies
+FROM s390x/node:lts-buster AS dependencies
 
 RUN apt-get update
 RUN apt-get install -y nginx
@@ -13,7 +13,8 @@ COPY package.json .
 RUN npm install --loglevel error
 
 ############################################# Building Main image ########################################################
-FROM node:alpine
+FROM s390x/node:lts-buster
+
 RUN apt-get update
 RUN apt-get install -y nginx
 
