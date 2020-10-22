@@ -1,4 +1,4 @@
-FROM  ubi8:nodejs-10
+FROM  s390x/ubi8:nodejs-10
 
 RUN yum update
 RUN yum install -y nginx
