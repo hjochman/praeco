@@ -1,4 +1,4 @@
-FROM node:lts AS dependencies
+FROM node:alpine AS dependencies
 
 RUN apt-get update
 RUN apt-get install -y nginx
@@ -13,7 +13,7 @@ COPY package.json .
 RUN npm install --loglevel error
 
 ############################################# Building Main image ########################################################
-FROM node:lts
+FROM node:alpine
 RUN apt-get update
 RUN apt-get install -y nginx
 
