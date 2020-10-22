@@ -1,7 +1,7 @@
-FROM s390x/node:lts-buster
+FROM  ubi8:nodejs-10
 
-RUN apt-get update
-RUN apt-get install -y nginx
+RUN yum update
+RUN yum install -y nginx
 
 RUN mkdir -p /tmp/nginx/praeco
 RUN mkdir -p /var/log/nginx
